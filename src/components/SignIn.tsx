@@ -1,10 +1,6 @@
 "use client";
 
-import { Icons } from "@/components/Icons";
-import UserAuthForm from "@/components/UserAuthForm";
 import Link from "next/link";
-import { Input } from "./ui/Input";
-import { Button } from "./ui/Button";
 import SignInForm from "./SignInForm";
 import icon from "../../public/Adu org hub logo.png";
 import Image from "next/image";
@@ -21,7 +17,6 @@ const SignIn = () => {
 				</p>
 			</div>
 			<SignInForm />
-			<UserAuthForm />
 			<p className="px-8 text-center text-sm text-muted-foreground">
 				New to AduOrgHub?{" "}
 				<Link

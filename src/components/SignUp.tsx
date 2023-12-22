@@ -20,7 +20,7 @@ const SignUp = () => {
 				</p>
 			</div>
 			<SignUpForm />
-			<UserAuthForm />
+
 			<p className="px-8 text-center text-sm text-muted-foreground">
 				Already a user?{" "}
 				<Link
