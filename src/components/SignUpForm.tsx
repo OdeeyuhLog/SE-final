@@ -15,6 +15,8 @@ import { Input } from "../components/ui/Input";
 import { Button } from "../components/ui/Button";
 import { useRouter } from "next/navigation";
 
+import { supabase } from "@/client";
+
 const FormSchema = z.object({
 	username: z.string().min(1, "Username is required").max(100),
 	email: z
@@ -42,25 +44,61 @@ const SignUpForm = () => {
 		},
 	});
 
-	const onSubmit = async (values: z.infer<typeof FormSchema>) => {
-		const response = await fetch("/api/user", {
-			method: "POST",
-			headers: {
-				"Content-Type": "application/json",
-			},
-			body: JSON.stringify({
-				username: values.username,
-				email: values.email,
-				password: values.password,
-			}),
-		});
+	// const onSubmit = async (values: z.infer<typeof FormSchema>) => {
+		// const response = await fetch("/api/user", {
+		// 	method: "POST",
+		// 	headers: {
+		// 		"Content-Type": "application/json",
+		// 	},
+		// 	body: JSON.stringify({
+		// 		username: values.username,
+		// 		email: values.email,
+		// 		password: values.password,
+		// 	}),
+		// });
 
-		if (response.ok) {
-			router.push("/sign-in");
-		} else {
-			console.error("Registration failed");
-		}
-	};
+	// 	if (response.ok) {
+	// 		router.push("/sign-in");
+	// 	} else {
+	// 		console.error("Registration failed");
+	// 	}
+	// };
+
+	const onSubmit = async (values: z.infer<typeof FormSchema>) => {
+        try {
+            const response = await fetch("/api/user", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    username: values.username,
+                    email: values.email,
+                    password: values.password,
+                }),
+            });
+
+            const { data, error } = await supabase.auth.signUp({
+                email: values.email,
+                password: values.password,
+                options: {
+                    data: {
+                        response: values.username,
+                    },
+                },
+            });
+
+            if (error) {
+                console.error("Registration failed:", error.message);
+            } else {
+                alert("An email has been sent for verification. Please check your inbox.");
+
+                router.push("/sign-in");
+            }
+        } catch (error) {
+            console.error("Something went wrong.");
+        }
+    };
 
 	return (
 		<Form {...form}>
