@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/Button";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import logo1 from "../../../public/ORGS/Adamson Computer Science Students Society(ACOMSS).jpg";
+import logo1 from "../../../public/ORGS/Adamson Computer Science Students Society (ACOMSS).jpg";
 import logo2 from "../../../public/ORGS/Adamson University and St. Vincent School of Theology(AdUSVST SOPHIA).jpg";
 import logo3 from "../../../public/ORGS/Adamson University Biology Society (AUBS).jpg";
 import logo4 from "../../../public/ORGS/Adamson University Chemical Engineering Student Society (ADUCHESS).jpg";
@@ -24,7 +24,7 @@ import logo18 from "../../../public/ORGS/Association of Hospitality Management S
 import logo19 from "../../../public/ORGS/Creative Communicators Society of Adamson University (CreaComms).jpg";
 import logo20 from "../../../public/ORGS/Federation of Junior Chapters of the Philippine Pharmacists Association - Rho Chapter.jpg";
 
-const Page = async () => {
+const Page = () => {
 	const router = useRouter();
 
 	const images: string[] = [
@@ -61,30 +61,386 @@ const Page = async () => {
 		<div>
 			<h1 className="my-2">Organizations</h1>
 			<div className="grid grid-cols-4 auto-rows-auto w-full h-full gap-6 ">
-				{images.map((image, index) => (
-					<div
-						className="bg-zinc-100 h-15 w-full py-3 px-4 flex gap-3 rounded-md shadow"
-						key={index}
-					>
-						<Image
-							className="h-4 w-4 rounded-sm"
-							src={images[index]}
-							alt="orgpic"
-						/>
-						<div>
-							<h1 className="font-semibold text-zinc-900">
-								`${orgNames[index]}`
-							</h1>
-							<Button
-								onClick={() => {
-									router.push("");
-								}}
-							>
-								View
-							</Button>
-						</div>
+				<div className="bg-zinc-100 h-15 w-full py-3 px-4 flex gap-3 rounded-md shadow">
+					<Image
+						className="h-12 w-auto rounded-full"
+						src={logo1}
+						width={300}
+						height={300}
+						alt="orgpic"
+					/>
+					<div>
+						<h1 className="font-semibold text-zinc-900">ACOMSS</h1>
+						<Button
+							onClick={() => {
+								router.push("/r/ACOMSS");
+							}}
+						>
+							View
+						</Button>
 					</div>
-				))}
+				</div>
+				<div className="bg-zinc-100 h-15 w-full py-3 px-4 flex gap-3 rounded-md shadow">
+					<Image
+						className="h-12 w-auto rounded-full"
+						src={logo2}
+						width={300}
+						height={300}
+						alt="orgpic"
+					/>
+					<div>
+						<h1 className="font-semibold text-zinc-900">AdU-SVST SOPHIA</h1>
+						<Button
+							onClick={() => {
+								router.push("/r/SOPHIA");
+							}}
+						>
+							View
+						</Button>
+					</div>
+				</div>
+				<div className="bg-zinc-100 h-15 w-full py-3 px-4 flex gap-3 rounded-md shadow">
+					<Image
+						className="h-12 w-auto rounded-full"
+						src={logo3}
+						width={300}
+						height={300}
+						alt="orgpic"
+					/>
+					<div>
+						<h1 className="font-semibold text-zinc-900">AUBS</h1>
+						<Button
+							onClick={() => {
+								router.push("/r/AUBS");
+							}}
+						>
+							View
+						</Button>
+					</div>
+				</div>
+				<div className="bg-zinc-100 h-15 w-full py-3 px-4 flex gap-3 rounded-md shadow">
+					<Image
+						className="h-12 w-auto rounded-full"
+						src={logo4}
+						width={300}
+						height={300}
+						alt="orgpic"
+					/>
+					<div>
+						<h1 className="font-semibold text-zinc-900">AdUChESS</h1>
+						<Button
+							onClick={() => {
+								router.push("/r/AdUChESS");
+							}}
+						>
+							View
+						</Button>
+					</div>
+				</div>
+				<div className="bg-zinc-100 h-15 w-full py-3 px-4 flex gap-3 rounded-md shadow">
+					<Image
+						className="h-12 w-auto rounded-full"
+						src={logo5}
+						width={300}
+						height={300}
+						alt="orgpic"
+					/>
+					<div>
+						<h1 className="font-semibold text-zinc-900">AUCS</h1>
+						<Button
+							onClick={() => {
+								router.push("/r/AUCS");
+							}}
+						>
+							View
+						</Button>
+					</div>
+				</div>
+				<div className="bg-zinc-100 h-15 w-full py-3 px-4 flex gap-3 rounded-md shadow">
+					<Image
+						className="h-12 w-auto rounded-full"
+						src={logo6}
+						width={300}
+						height={300}
+						alt="orgpic"
+					/>
+					<div>
+						<h1 className="font-semibold text-zinc-900">ACOES</h1>
+						<Button
+							onClick={() => {
+								router.push("/r/ACOES");
+							}}
+						>
+							View
+						</Button>
+					</div>
+				</div>
+				<div className="bg-zinc-100 h-15 w-full py-3 px-4 flex gap-3 rounded-md shadow">
+					<Image
+						className="h-12 w-auto rounded-full"
+						src={logo7}
+						width={300}
+						height={300}
+						alt="orgpic"
+					/>
+					<div>
+						<h1 className="font-semibold text-zinc-900">AUEESS</h1>
+						<Button
+							onClick={() => {
+								router.push("/r/AUEESS");
+							}}
+						>
+							View
+						</Button>
+					</div>
+				</div>
+				<div className="bg-zinc-100 h-15 w-full py-3 px-4 flex gap-3 rounded-md shadow">
+					<Image
+						className="h-12 w-auto rounded-full"
+						src={logo8}
+						width={300}
+						height={300}
+						alt="orgpic"
+					/>
+					<div>
+						<h1 className="font-semibold text-zinc-900">AUECESS</h1>
+						<Button
+							onClick={() => {
+								router.push("/r/AUECESS");
+							}}
+						>
+							View
+						</Button>
+					</div>
+				</div>
+				<div className="bg-zinc-100 h-15 w-full py-3 px-4 flex gap-3 rounded-md shadow">
+					<Image
+						className="h-12 w-auto rounded-full"
+						src={logo9}
+						width={300}
+						height={300}
+						alt="orgpic"
+					/>
+					<div>
+						<h1 className="font-semibold text-zinc-900">AdU-IT&M</h1>
+						<Button
+							onClick={() => {
+								router.push("/r/ADUITM");
+							}}
+						>
+							View
+						</Button>
+					</div>
+				</div>
+				<div className="bg-zinc-100 h-15 w-full py-3 px-4 flex gap-3 rounded-md shadow">
+					<Image
+						className="h-12 w-auto rounded-full"
+						src={logo10}
+						width={300}
+						height={300}
+						alt="orgpic"
+					/>
+					<div>
+						<h1 className="font-semibold text-zinc-900">ADJMA</h1>
+						<Button
+							onClick={() => {
+								router.push("/r/ADJMA");
+							}}
+						>
+							View
+						</Button>
+					</div>
+				</div>
+				<div className="bg-zinc-100 h-15 w-full py-3 px-4 flex gap-3 rounded-md shadow">
+					<Image
+						className="h-12 w-auto rounded-full"
+						src={logo11}
+						width={300}
+						height={300}
+						alt="orgpic"
+					/>
+					<div>
+						<h1 className="font-semibold text-zinc-900">AUMES</h1>
+						<Button
+							onClick={() => {
+								router.push("/r/AUMES");
+							}}
+						>
+							View
+						</Button>
+					</div>
+				</div>
+				<div className="bg-zinc-100 h-15 w-full py-3 px-4 flex gap-3 rounded-md shadow">
+					<Image
+						className="h-12 w-auto rounded-full"
+						src={logo12}
+						width={300}
+						height={300}
+						alt="orgpic"
+					/>
+					<div>
+						<h1 className="font-semibold text-zinc-900">AUMEGA</h1>
+						<Button
+							onClick={() => {
+								router.push("/r/AUMEGA");
+							}}
+						>
+							View
+						</Button>
+					</div>
+				</div>
+				<div className="bg-zinc-100 h-15 w-full py-3 px-4 flex gap-3 rounded-md shadow">
+					<Image
+						className="h-12 w-auto rounded-full"
+						src={logo13}
+						width={300}
+						height={300}
+						alt="orgpic"
+					/>
+					<div>
+						<h1 className="font-semibold text-zinc-900">AUPS</h1>
+						<Button
+							onClick={() => {
+								router.push("/r/AUPS");
+							}}
+						>
+							View
+						</Button>
+					</div>
+				</div>
+				<div className="bg-zinc-100 h-15 w-full py-3 px-4 flex gap-3 rounded-md shadow">
+					<Image
+						className="h-12 w-auto rounded-full"
+						src={logo14}
+						width={300}
+						height={300}
+						alt="orgpic"
+					/>
+					<div>
+						<h1 className="font-semibold text-zinc-900">AUSNA</h1>
+						<Button
+							onClick={() => {
+								router.push("/r/AUSNA");
+							}}
+						>
+							View
+						</Button>
+					</div>
+				</div>
+				<div className="bg-zinc-100 h-15 w-full py-3 px-4 flex gap-3 rounded-md shadow">
+					<Image
+						className="h-12 w-auto rounded-full"
+						src={logo15}
+						width={300}
+						height={300}
+						alt="orgpic"
+					/>
+					<div>
+						<h1 className="font-semibold text-zinc-900">AUYEA</h1>
+						<Button
+							onClick={() => {
+								router.push("/r/AUYEA");
+							}}
+						>
+							View
+						</Button>
+					</div>
+				</div>
+				<div className="bg-zinc-100 h-15 w-full py-3 px-4 flex gap-3 rounded-md shadow">
+					<Image
+						className="h-12 w-auto rounded-full"
+						src={logo16}
+						width={300}
+						height={300}
+						alt="orgpic"
+					/>
+					<div>
+						<h1 className="font-semibold text-zinc-900">ADU-ACES</h1>
+						<Button
+							onClick={() => {
+								router.push("/r/ADU-ACES");
+							}}
+						>
+							View
+						</Button>
+					</div>
+				</div>
+				<div className="bg-zinc-100 h-15 w-full py-3 px-4 flex gap-3 rounded-md shadow">
+					<Image
+						className="h-12 w-auto rounded-full"
+						src={logo17}
+						width={300}
+						height={300}
+						alt="orgpic"
+					/>
+					<div>
+						<h1 className="font-semibold text-zinc-900">AdU-PULITIKA</h1>
+						<Button
+							onClick={() => {
+								router.push("/r/AdU-PULITIKA");
+							}}
+						>
+							View
+						</Button>
+					</div>
+				</div>
+				<div className="bg-zinc-100 h-15 w-full py-3 px-4 flex gap-3 rounded-md shadow">
+					<Image
+						className="h-12 w-auto rounded-full"
+						src={logo18}
+						width={300}
+						height={300}
+						alt="orgpic"
+					/>
+					<div>
+						<h1 className="font-semibold text-zinc-900">AHMS</h1>
+						<Button
+							onClick={() => {
+								router.push("/r/AHMS");
+							}}
+						>
+							View
+						</Button>
+					</div>
+				</div>
+				<div className="bg-zinc-100 h-15 w-full py-3 px-4 flex gap-3 rounded-md shadow">
+					<Image
+						className="h-12 w-auto rounded-full"
+						src={logo19}
+						width={300}
+						height={300}
+						alt="orgpic"
+					/>
+					<div>
+						<h1 className="font-semibold text-zinc-900">CREACOMMS</h1>
+						<Button
+							onClick={() => {
+								router.push("/r/CREACOMMS");
+							}}
+						>
+							View
+						</Button>
+					</div>
+				</div>
+				<div className="bg-zinc-100 h-15 w-full py-3 px-4 flex gap-3 rounded-md shadow">
+					<Image
+						className="h-12 w-auto rounded-full"
+						src={logo20}
+						width={300}
+						height={300}
+						alt="orgpic"
+					/>
+					<div>
+						<h1 className="font-semibold text-zinc-900">JPPhA-RC</h1>
+						<Button
+							onClick={() => {
+								router.push("/r/JPPhA-RC");
+							}}
+						>
+							View
+						</Button>
+					</div>
+				</div>
 			</div>
 		</div>
 	);
