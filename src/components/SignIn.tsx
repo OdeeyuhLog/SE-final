@@ -4,6 +4,7 @@ import Link from "next/link";
 import SignInForm from "./SignInForm";
 import icon from "../../public/Adu org hub logo.png";
 import Image from "next/image";
+import UserAuthForm from "./UserAuthForm";
 
 const SignIn = () => {
 	return (

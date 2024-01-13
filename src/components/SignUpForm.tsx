@@ -16,6 +16,7 @@ import { Button } from "../components/ui/Button";
 import { useRouter } from "next/navigation";
 
 import { supabase } from "@/client";
+import { toast, useToast } from "@/hooks/use-toast";
 
 const FormSchema = z.object({
 	username: z.string().min(1, "Username is required").max(100),
@@ -45,17 +46,17 @@ const SignUpForm = () => {
 	});
 
 	// const onSubmit = async (values: z.infer<typeof FormSchema>) => {
-		// const response = await fetch("/api/user", {
-		// 	method: "POST",
-		// 	headers: {
-		// 		"Content-Type": "application/json",
-		// 	},
-		// 	body: JSON.stringify({
-		// 		username: values.username,
-		// 		email: values.email,
-		// 		password: values.password,
-		// 	}),
-		// });
+	// const response = await fetch("/api/user", {
+	// 	method: "POST",
+	// 	headers: {
+	// 		"Content-Type": "application/json",
+	// 	},
+	// 	body: JSON.stringify({
+	// 		username: values.username,
+	// 		email: values.email,
+	// 		password: values.password,
+	// 	}),
+	// });
 
 	// 	if (response.ok) {
 	// 		router.push("/sign-in");
@@ -65,40 +66,43 @@ const SignUpForm = () => {
 	// };
 
 	const onSubmit = async (values: z.infer<typeof FormSchema>) => {
-        try {
-            const response = await fetch("/api/user", {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
-                body: JSON.stringify({
-                    username: values.username,
-                    email: values.email,
-                    password: values.password,
-                }),
-            });
+		try {
+			const response = await fetch("/api/user", {
+				method: "POST",
+				headers: {
+					"Content-Type": "application/json",
+				},
+				body: JSON.stringify({
+					username: values.username,
+					email: values.email,
+					password: values.password,
+				}),
+			});
 
-            const { data, error } = await supabase.auth.signUp({
-                email: values.email,
-                password: values.password,
-                options: {
-                    data: {
-                        response: values.username,
-                    },
-                },
-            });
+			const { data, error } = await supabase.auth.signUp({
+				email: values.email,
+				password: values.password,
+				options: {
+					data: {
+						response: values.username,
+					},
+				},
+			});
 
-            if (error) {
-                console.error("Registration failed:", error.message);
-            } else {
-                alert("An email has been sent for verification. Please check your inbox.");
-
-                router.push("/sign-in");
-            }
-        } catch (error) {
-            console.error("Something went wrong.");
-        }
-    };
+			if (error) {
+				console.error("Registration failed:", error.message);
+			} else {
+				toast({
+					title: "Verification Email",
+					description:
+						"An email has been sent for verification. Please check your inbox.",
+				});
+				router.push("/sign-in");
+			}
+		} catch (error) {
+			console.error("Something went wrong.");
+		}
+	};
 
 	return (
 		<Form {...form}>
