@@ -33,6 +33,12 @@ export default async function Home() {
 								organizations that you follow.
 							</p>
 						</div>
+						{/* <Link
+							className={buttonVariants({ className: "w-full mt-5 mb-6" })}
+							href={"/r/create"}
+						>
+							Create Community
+						</Link> */}
 					</dl>
 				</div>
 			</div>
