@@ -65,9 +65,25 @@
     --destructive-foreground: 210 40% 98%;
 
     --ring: 216 34% 17%;
-
+ 
     --radius: 0.5rem;
   }
+
+  [data-theme="dark"] body {
+    background-color: #000;
+    color: #fff;
+  }
+
+  [data-theme="dark"] div {
+    background-color: #000;
+    color: #fff;
+  }
+
+  [data-theme="dark"] button {
+    background-color: #000;
+    color: #fff;
+  }
+  
 }
 
 @layer base {

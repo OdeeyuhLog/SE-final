@@ -6,6 +6,7 @@ import { UserAccountNav } from "./UserAccountNav";
 import SearchBar from "./SearchBar";
 import Image from "next/image";
 import logo from "../../public/Adu org hub logo.png";
+import ThemeSwitcher from "./ThemeSwitcher";
 
 const Navbar = async () => {
 	const session = await getServerSession(authOptions);
@@ -28,6 +29,8 @@ const Navbar = async () => {
 
 				{/* search bar */}
 				<SearchBar />
+
+				<ThemeSwitcher />
 
 				{/* actions */}
 				{session?.user ? (
